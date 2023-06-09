@@ -25,8 +25,8 @@ class UserTest extends TestCase
         // When They hit the api/user endpoint, while passing the necessary data
         $response = $this->post('api/user', $attributes);
 
-        $response->assertStatus(Response::HTTP_CREATED);
         // Then There should be a new user in the database
+        $response->assertStatus(Response::HTTP_CREATED);
         $this->assertDatabaseHas('users', ['name' => $attributes['name']]);
     }
 
@@ -45,7 +45,6 @@ class UserTest extends TestCase
         $response = $this->post('api/user', $attributes);
 
         $response->assertStatus(Response::HTTP_FOUND);
-
         $this->assertDatabaseCount('users', 0);
     }
 
@@ -63,9 +62,8 @@ class UserTest extends TestCase
         $this->post('api/user', $attributes);
         $response = $this->post('api/user', $attributes);
 
-        $response->assertContent('Email already in exists!');
+        $response->assertContent('Email already exists!');
         $response->assertStatus(Response::HTTP_FOUND);
         $this->assertDatabaseCount('users', 1);
-        
     }
 }

@@ -10,6 +10,6 @@ class DuplicateEmailException extends Exception
 {
     public function render(Request $request): Response
     {
-        return response('Email already in exists!', Response::HTTP_FOUND);
+        return response('Email already exists!', Response::HTTP_FOUND);
     }
 }
