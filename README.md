@@ -6,7 +6,7 @@ This is a basic laravel project, using some solid design principles and TDD
 
 In this project we have implemented the following principles
 
-[x] Single Responsibility Principle
+[x] Single Responsibility Principle </br>
 [x] Interface Segregation Principle
 [x] Open-closed Principle
 [x] Dependency Inversion Principle
