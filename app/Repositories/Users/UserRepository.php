@@ -18,4 +18,9 @@ class UserRepository implements IUserRepository
     $this->user->password = $user->password;
     $this->user->save();
   }
+
+  public function findByEmail(string $email): User | null
+  {
+    return $this->user::where('email', $email)->first();
+  }
 }

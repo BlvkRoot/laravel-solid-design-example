@@ -3,16 +3,12 @@
 namespace App\Services\Users;
 
 use App\Dto\Users\UserDto;
-use App\Repositories\Users\IUserRepository;
 
-class StoreUserService
+class StoreUserService extends BaseUserService
 {
-  public function __construct(private readonly IUserRepository $userRepository)
-  {
-  }
-  
   public function execute(UserDto $user): void
   {
+    $this->findUserByEmail($user->email);
     $this->userRepository->save($user);
   }
 }
