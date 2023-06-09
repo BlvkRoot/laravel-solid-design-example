@@ -23,4 +23,14 @@ class UserRepository implements IUserRepository
   {
     return $this->user::where('email', $email)->first();
   }
+
+  public function findById(string $id): User
+  {
+    return $this->user::find($id);
+  }
+
+  public function delete(User $user): void
+  {
+    $user->delete();
+  }
 }

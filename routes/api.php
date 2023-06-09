@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DeleteUserController;
 use App\Http\Controllers\StoreUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/user', [StoreUserController::class, 'handle']);
+Route::delete('/user/{id}', [DeleteUserController::class, 'handle'])->name('user.delete');
