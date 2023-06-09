@@ -7,8 +7,8 @@ This is a basic laravel project, using some solid design principles and TDD
 In this project we have implemented the following principles
 
 [x] Single Responsibility Principle </br>
-[x] Interface Segregation Principle
-[x] Open-closed Principle
+[x] Interface Segregation Principle </br>
+[x] Open-closed Principle </br>
 [x] Dependency Inversion Principle
 
 Explanation: With Laravel we normally have a Controller which does more than one thing, by default its gonna have the following 
